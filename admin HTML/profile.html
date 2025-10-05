@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNEC Online Eco-Trade System</title>
+    <link rel="stylesheet" href="../admin CSS/profile.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <!-- Admin Profile Section -->
+                <div class="admin-profile">
+                    <div class="admin-avatar">UN</div>
+                    <div class="admin-info">
+                        <div class="admin-name">Uygen Namgyel</div>
+                        <div class="admin-role">Administrator</div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <div class="nav-item active" onclick="showPage('home')">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        <span>Home</span>
+                    </div>
+                    
+                    <div class="nav-item sub-nav-item" onclick="showPage('generate-report')">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                        <span>Generate Report</span>
+                    </div>
+                    
+                    <div class="nav-item sub-nav-item" onclick="showPage('profile')">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <span>Profile</span>
+                    </div>
+                    
+                    <div class="nav-item sub-nav-item" onclick="navigateTo('switch-account')">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63c-.34-1.02-1.28-1.37-2.21-1.37-.93 0-1.87.35-2.21 1.37L13 16h2.5v6h4.5zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2.5 16v-6H10.5l-2.54-7.63C7.62 7.35 6.68 7 5.75 7s-1.87.35-2.21 1.37L1 16h2.5v6H8z"/>
+                        </svg>
+                        <span>Switch Account</span>
+                    </div>
+                    
+                    <div class="nav-item sub-nav-item" onclick="navigateTo('logout')">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                        </svg>
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-left">
+                    <h1 class="page-title" id="page-title">Dashboard Overview</h1>
+                    <p class="page-subtitle" id="page-subtitle">Welcome back! Here's what's happening with your platform.</p>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <svg class="search-icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search anything...">
+                    </div>
+                    
+                    <button class="notification-btn" onclick="showNotifications()">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <div class="notification-badge">3</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Home Page -->
+            <div id="home-page" class="page-content active">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card items" onclick="navigateToSection('items')">
+                        <div class="stat-header">
+                            <div class="stat-icon">📦</div>
+                            <div class="stat-trend">
+                                <span>↗</span> +12%
+                            </div>
+                        </div>
+                        <div class="stat-number">1,250</div>
+                        <div class="stat-label">Item Manage</div>
+                        <div class="stat-description">Total items in inventory with active management</div>
+                    </div>
+
+                    <div class="stat-card listings" onclick="navigateToSection('listings')">
+                        <div class="stat-header">
+                            <div class="stat-icon">📋</div>
+                            <div class="stat-trend">
+                                <span>↗</span> +8%
+                            </div>
+                        </div>
+                        <div class="stat-number">320</div>
+                        <div class="stat-label">Active Listings</div>
+                        <div class="stat-description">Currently published and visible listings</div>
+                    </div>
+
+                    <div class="stat-card feedback" onclick="navigateToSection('feedback')">
+                        <div class="stat-header">
+                            <div class="stat-icon">💬</div>
+                            <div class="stat-trend">
+                                <span>↗</span> +24%
+                            </div>
+                        </div>
+                        <div class="stat-number">150</div>
+                        <div class="stat-label">Feedback</div>
+                        <div class="stat-description">User reviews and feedback submissions</div>
+                    </div>
+
+                    <div class="stat-card category" onclick="navigateToSection('categories')">
+                        <div class="stat-header">
+                            <div class="stat-icon">🏷️</div>
+                            <div class="stat-trend">
+                                <span>→</span> 0%
+                            </div>
+                        </div>
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Item Category</div>
+                        <div class="stat-description">Product categories for organization</div>
+                    </div>
+
+                    <div class="stat-card users" onclick="navigateToSection('users')">
+                        <div class="stat-header">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-trend">
+                                <span>↗</span> +40%
+                            </div>
+                        </div>
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Manage User</div>
+                        <div class="stat-description">Active administrative users</div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="activities-section">
+                    <div class="activities-header">
+                        <h2 class="activities-title">Recent Activities</h2>
+                        <a href="#" class="view-all-btn">View All →</a>
+                    </div>
+                    
+                    <div class="activity-list">
+                        <div class="activity-item" onclick="viewUser('uygen')">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' rx='16' fill='%236366f1'/%3E%3Ctext x='28' y='36' text-anchor='middle' fill='white' font-family='Inter' font-size='18' font-weight='600'%3EUN%3C/text%3E%3C/svg%3E" alt="Uygen Namgyel" class="activity-avatar">
+                            <div class="activity-info">
+                                <div class="activity-name">Uygen Namgyel</div>
+                                <div class="activity-action">New user registration completed</div>
+                                <div class="activity-time">2 minutes ago</div>
+                            </div>
+                            <div class="activity-status status-new">New</div>
+                        </div>
+
+                        <div class="activity-item" onclick="viewListing('yeshi')">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' rx='16' fill='%238b5cf6'/%3E%3Ctext x='28' y='36' text-anchor='middle' fill='white' font-family='Inter' font-size='18' font-weight='600'%3EYD%3C/text%3E%3C/svg%3E" alt="Yeshi Dekar" class="activity-avatar">
+                            <div class="activity-info">
+                                <div class="activity-name">Yeshi Dekar</div>
+                                <div class="activity-action">New listing created and published</div>
+                                <div class="activity-time">15 minutes ago</div>
+                            </div>
+                            <div class="activity-status status-pending">Pending</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generate Report Page -->
+            <div id="generate-report-page" class="page-content">
+                <!-- Report Generation Section -->
+                <div class="report-container">
+                    <!-- Report Type Selection -->
+                    <div class="report-section">
+                        <h3 class="section-title">Report Type</h3>
+                        <div class="report-options">
+                            <div class="option-card" data-type="sales" onclick="selectReportType(this)">
+                                <div class="option-icon">
+                                    <i>📊</i>
+                                </div>
+                                <div class="option-title">Sales Report</div>
+                                <div class="option-desc">Detailed analysis of sales performance, revenue trends, and transaction history</div>
+                            </div>
+                            
+                            <div class="option-card" data-type="inventory" onclick="selectReportType(this)">
+                                <div class="option-icon">
+                                    <i>📦</i>
+                                </div>
+                                <div class="option-title">Inventory Report</div>
+                                <div class="option-desc">Overview of stock levels, product management, and inventory turnover</div>
+                            </div>
+                            
+                            <div class="option-card" data-type="user" onclick="selectReportType(this)">
+                                <div class="option-icon">
+                                    <i>👥</i>
+                                </div>
+                                <div class="option-title">User Activity</div>
+                                <div class="option-desc">User engagement metrics, platform usage statistics, and behavior patterns</div>
+                            </div>
+                            
+                            <div class="option-card" data-type="feedback" onclick="selectReportType(this)">
+                                <div class="option-icon">
+                                    <i>💬</i>
+                                </div>
+                                <div class="option-title">Feedback Report</div>
+                                <div class="option-desc">Customer feedback analysis, satisfaction metrics, and review trends</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date Range Selection -->
+                    <div class="report-section">
+                        <h3 class="section-title">Date Range</h3>
+                        <div class="date-range">
+                            <div class="form-group">
+                                <label class="form-label">Start Date</label>
+                                <input type="date" id="start-date" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">End Date</label>
+                                <input type="date" id="end-date" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Report Format Selection -->
+                    <div class="report-section">
+                        <h3 class="section-title">Report Format</h3>
+                        <div class="form-group">
+                            <select id="report-format" class="form-control">
+                                <option value="pdf">PDF Document</option>
+                                <option value="excel">Excel Spreadsheet</option>
+                                <option value="csv">CSV File</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="generateReport()">
+                            <i>📈</i> Generate Report
+                        </button>
+                        <button class="btn btn-outline" onclick="resetReportForm()">
+                            <i>🔄</i> Reset Form
+                        </button>
+                    </div>
+
+                    <!-- Export Buttons -->
+                    <div class="export-buttons" id="export-buttons" style="display: none;">
+                        <button class="export-btn export-pdf" onclick="exportReport('pdf')">
+                            <i>📄</i> Export as PDF
+                        </button>
+                        <button class="export-btn export-excel" onclick="exportReport('excel')">
+                            <i>📊</i> Export as Excel
+                        </button>
+                        <button class="export-btn export-csv" onclick="exportReport('csv')">
+                            <i>📋</i> Export as CSV
+                        </button>
+                    </div>
+
+                    <!-- Report Preview -->
+                    <div class="report-preview" id="report-preview">
+                        <div class="preview-header">
+                            <div class="preview-title">Report Preview</div>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-placeholder">
+                                <i>📊</i>
+                                <p>Your report will be generated here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Page -->
+            <div id="profile-page" class="page-content">
+                <!-- Profile Container -->
+                <div class="profile-container">
+                    <!-- Profile Header -->
+                    <div class="profile-header">
+                        <div class="profile-avatar">UN</div>
+                        <div class="profile-info">
+                            <h2 class="profile-name">Uygen Namgyel</h2>
+                            <p class="profile-role">Administrator • uygen.namgyel@jnec.edu.bt</p>
+                            <p style="color: var(--gray-500); margin-bottom: 1rem;">Last login: Today at 10:30 AM</p>
+                            
+                            <div class="profile-stats">
+                                <div class="profile-stat">
+                                    <div class="stat-value">125</div>
+                                    <div class="stat-label">Listings</div>
+                                </div>
+                                <div class="profile-stat">
+                                    <div class="stat-value">42</div>
+                                    <div class="stat-label">Transactions</div>
+                                </div>
+                                <div class="profile-stat">
+                                    <div class="stat-value">98%</div>
+                                    <div class="stat-label">Rating</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-actions">
+                            <button class="btn btn-primary" onclick="editProfile()">
+                                <i>✏️</i> Edit Profile
+                            </button>
+                            <button class="btn btn-outline" onclick="uploadPhoto()">
+                                <i>📷</i> Change Photo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information Section -->
+                    <div class="profile-section">
+                        <h3 class="section-title">Personal Information</h3>
+                        <form class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" value="Uygen" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" value="Namgyel" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" value="uygen.namgyel@jnec.edu.bt" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" value="+975-17-123456" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Department</label>
+                                <input type="text" class="form-control" value="Administration" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Position</label>
+                                <input type="text" class="form-control" value="System Administrator" readonly>
+                            </div>
+                            <div class="form-group full-width">
+                                <label class="form-label">Bio</label>
+                                <textarea class="form-control" readonly>System administrator for JNEC Online Eco-Trade System with 5+ years of experience in platform management and user support. Specialized in inventory management and user analytics.</textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Security Settings Section -->
+                    <div class="profile-section">
+                        <h3 class="section-title">Security Settings</h3>
+                        <div class="security-options">
+                            <div class="security-card">
+                                <div class="security-header">
+                                    <div>
+                                        <div class="security-title">Two-Factor Authentication</div>
+                                        <div class="security-desc">Add an extra layer of security to your account with 2FA</div>
+                                    </div>
+                                    <div class="security-icon">
+                                        <i>🔒</i>
+                                    </div>
+                                </div>
+                                <div class="security-status">
+                                    <span class="status-inactive">Inactive</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" onchange="toggle2FA(this)">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="security-card">
+                                <div class="security-header">
+                                    <div>
+                                        <div class="security-title">Login Notifications</div>
+                                        <div class="security-desc">Get alerted for new sign-ins from unknown devices</div>
+                                    </div>
+                                    <div class="security-icon">
+                                        <i>🔔</i>
+                                    </div>
+                                </div>
+                                <div class="security-status">
+                                    <span class="status-active">Active</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked onchange="toggleNotifications(this)">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="security-card">
+                                <div class="security-header">
+                                    <div>
+                                        <div class="security-title">Password</div>
+                                        <div class="security-desc">Last changed 3 months ago</div>
+                                    </div>
+                                    <div class="security-icon">
+                                        <i>🔑</i>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;" onclick="changePassword()">
+                                    <i>🔄</i> Change Password
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons" style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button class="btn btn-primary" onclick="saveProfile()">
+                            <i>💾</i> Save Changes
+                        </button>
+                        <button class="btn btn-outline" onclick="resetProfile()">
+                            <i>🔄</i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="floating-action" onclick="showQuickActions()" title="Quick Actions">
+        +
+    </button>
+
+    <script src="../admin JS/profile.js"></script>
+</body>
+</html>

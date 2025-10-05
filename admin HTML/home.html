@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../admin CSS/home.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <!-- Admin Profile Section -->
+                <div class="admin-profile">
+                    <div class="admin-avatar">UN</div>
+                    <div class="admin-info">
+                        <div class="admin-name">Uygen Namgyel</div>
+                        <div class="admin-role">Administrator</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Updated Sidebar Navigation -->
+<nav class="nav-menu">
+    <div class="nav-section">
+        <a href="home.html" class="nav-item active">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span>Home</span>
+        </a>
+        
+        <a href="generate-report.html" class="nav-item sub-nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            <span>Generate Report</span>
+        </a>
+        
+        <a href="profile.html" class="nav-item sub-nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <span>Profile</span>
+        </a>
+        
+        <a href="switch-acc.html" class="nav-item sub-nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63c-.34-1.02-1.28-1.37-2.21-1.37-.93 0-1.87.35-2.21 1.37L13 16h2.5v6h4.5zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2.5 16v-6H10.5l-2.54-7.63C7.62 7.35 6.68 7 5.75 7s-1.87.35-2.21 1.37L1 16h2.5v6H8z"/>
+            </svg>
+            <span>Switch Account</span>
+        </a>
+        
+        <a href="logout.html" class="nav-item sub-nav-item">
+            <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+            </svg>
+            <span>Logout</span>
+        </a>
+    </div>
+</nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-left">
+                    <h1 class="page-title">Dashboard Overview</h1>
+                    <p class="page-subtitle">Welcome back! Here's what's happening with your platform.</p>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <svg class="search-icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search anything...">
+                    </div>
+                    
+                    <button class="notification-btn" onclick="showNotifications()">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <div class="notification-badge">3</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card items" onclick="navigateTo('items')">
+                    <div class="stat-header">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-trend">
+                            <span>↗</span> +12%
+                        </div>
+                    </div>
+                    <div class="stat-number">1,250</div>
+            
+                    <div class="stat-label">Item Manage</div>
+                    <div class="stat-description">Total items in inventory with active management</div>
+                </div>
+
+                <div class="stat-card listings" onclick="navigateTo('listings')">
+                    <div class="stat-header">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-trend">
+                            <span>↗</span> +8%
+                        </div>
+                    </div>
+                    <div class="stat-number">320</div>
+                    <div class="stat-label">Active Listings</div>
+                    <div class="stat-description">Currently published and visible listings</div>
+                </div>
+
+                <div class="stat-card feedback" onclick="navigateTo('feedback')">
+                    <div class="stat-header">
+                        <div class="stat-icon">💬</div>
+                        <div class="stat-trend">
+                            <span>↗</span> +24%
+                        </div>
+                    </div>
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Feedback</div>
+                    <div class="stat-description">User reviews and feedback submissions</div>
+                </div>
+
+                <div class="stat-card category" onclick="navigateTo('categories')">
+                    <div class="stat-header">
+                        <div class="stat-icon">🏷️</div>
+                        <div class="stat-trend">
+                            <span>→</span> 0%
+                        </div>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Item Category</div>
+                    <div class="stat-description">Product categories for organization</div>
+                </div>
+
+                <div class="stat-card users" onclick="navigateTo('users')">
+                    <div class="stat-header">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-trend">
+                            <span>↗</span> +40%
+                        </div>
+                    </div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Manage User</div>
+                    <div class="stat-description">Active administrative users</div>
+                </div>
+            </div>
+
+            <!-- Recent Activities -->
+            <div class="activities-section">
+                <div class="activities-header">
+                    <h2 class="activities-title">Recent Activities</h2>
+                    <a href="#" class="view-all-btn">View All →</a>
+                </div>
+                
+                <div class="activity-list">
+                    <div class="activity-item" onclick="viewUser('uygen')">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' rx='16' fill='%236366f1'/%3E%3Ctext x='28' y='36' text-anchor='middle' fill='white' font-family='Inter' font-size='18' font-weight='600'%3EUN%3C/text%3E%3C/svg%3E" alt="Uygen Namgyel" class="activity-avatar">
+                        <div class="activity-info">
+                            <div class="activity-name">Uygen Namgyel</div>
+                            <div class="activity-action">New user registration completed</div>
+                            <div class="activity-time">2 minutes ago</div>
+                        </div>
+                        <div class="activity-status status-new">New</div>
+                    </div>
+
+                    <div class="activity-item" onclick="viewListing('yeshi')">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' rx='16' fill='%238b5cf6'/%3E%3Ctext x='28' y='36' text-anchor='middle' fill='white' font-family='Inter' font-size='18' font-weight='600'%3EYD%3C/text%3E%3C/svg%3E" alt="Yeshi Dekar" class="activity-avatar">
+                        <div class="activity-info">
+                            <div class="activity-name">Yeshi Dekar</div>
+                            <div class="activity-action">New listing created and published</div>
+                            <div class="activity-time">15 minutes ago</div>
+                        </div>
+                        <div class="activity-status status-pending">Pending</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="floating-action" onclick="showQuickActions()" title="Quick Actions">
+        +
+    </button>
+    <script src="../admin JS/home.js"></script>
+</body>
+</html>
