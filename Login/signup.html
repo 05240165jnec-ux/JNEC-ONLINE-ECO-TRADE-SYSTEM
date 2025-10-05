@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../CSS/signup.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <div class="background-blur"></div>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Title -->
+    <h1 class="title">Create Account</h1>
+    <p class="subtitle">Sign up with your official RUB Email</p>
+
+    <!-- Form -->
+    <form id="signupForm" class="form">
+      <!-- Name -->
+      <div class="field-container">
+        <input type="text" id="name" name="name" class="input-field" placeholder=" ">
+        <label for="name" class="floating-label">Name</label>
+      </div>
+
+      <!-- Email / Phone -->
+      <div class="field-container">
+        <input type="text" id="emailPhone" name="emailPhone" class="input-field" placeholder=" ">
+        <label for="emailPhone" class="floating-label">Email / Phone Number</label>
+      </div>
+
+      <!-- Password -->
+      <div class="field-container">
+        <input type="password" id="password" name="password" class="input-field password-field" placeholder=" ">
+        <label for="password" class="floating-label">Password</label>
+        <button type="button" class="eye-toggle" id="passwordToggle">
+          <i data-lucide="eye-off"></i>
+        </button>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="field-container">
+        <input type="password" id="confirmPassword" name="confirmPassword" class="input-field password-field" placeholder=" ">
+        <label for="confirmPassword" class="floating-label">Confirm Password</label>
+        <button type="button" class="eye-toggle" id="confirmPasswordToggle">
+          <i data-lucide="eye-off"></i>
+        </button>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-button">Create Account</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../Js/signup.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
