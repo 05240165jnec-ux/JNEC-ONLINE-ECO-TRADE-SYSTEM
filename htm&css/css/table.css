@@ -1,0 +1,492 @@
+/* Custom CSS for JNEC ECO-TRADE Item Details */
+/* Eco-Friendly Theme with Green & Earth Tones */
+
+:root {
+    --primary-green: #2d6a4f;
+    --light-green: #52b788;
+    --accent-green: #74c69d;
+    --bg-cream: #f8f9fa;
+    --bg-light: #e8f5e9;
+    --card-bg: #ffffff;
+    --text-dark: #1b4332;
+    --text-gray: #52796f;
+    --hover-green: #40916c;
+    --border-color: #b7e4c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.2);
+}
+
+.back-btn,
+.wishlist-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    color: var(--accent-green);
+    transform: translateX(-3px);
+}
+
+.wishlist-btn {
+    font-size: 24px;
+}
+
+.wishlist-btn.active i {
+    color: #ff4757;
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.1);
+}
+
+.wishlist-btn i {
+    transition: all 0.3s ease;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Content */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: calc(100vh - 61px);
+}
+
+/* Image Section */
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 40px;
+    border-right: 2px solid var(--border-color);
+}
+
+.item-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(45, 106, 79, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.item-image:hover {
+    transform: scale(1.02);
+}
+
+/* Details Section */
+.details-section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.title-section {
+    margin-bottom: 32px;
+}
+
+.item-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.item-price {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-green), var(--light-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+}
+
+.posted-time {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+/* Details Card */
+.details-card {
+    margin-bottom: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--primary-green);
+}
+
+.description-text {
+    color: var(--text-gray);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* Seller Card */
+.seller-card {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.seller-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.seller-details-link {
+    background: none;
+    border: none;
+    color: var(--light-green);
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.seller-details-link:hover {
+    background: linear-gradient(90deg, var(--bg-light), #ffffff);
+    color: var(--primary-green);
+    transform: translateX(3px);
+}
+
+.seller-details-link i {
+    font-size: 11px;
+}
+
+.seller-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.seller-info:hover {
+    background: linear-gradient(90deg, var(--bg-light), #ffffff);
+    border-color: var(--border-color);
+}
+
+.seller-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+}
+
+.seller-data {
+    flex: 1;
+}
+
+.seller-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.seller-contact {
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-top: 2px;
+}
+
+/* Book Now Button */
+.book-now-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, var(--light-green), var(--accent-green));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+}
+
+.book-now-btn:hover {
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(82, 183, 136, 0.4);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 106, 79, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(82, 183, 136, 0.25);
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-gray);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.modal-close:hover {
+    color: var(--primary-green);
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.modal-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+}
+
+.modal-seller-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.rating-section {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.rating-stars {
+    font-size: 24px;
+    color: #f39c12;
+    margin-bottom: 8px;
+}
+
+.rating-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 4px;
+}
+
+.rating-count {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+.seller-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item i {
+    font-size: 28px;
+    color: var(--light-green);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.contact-info {
+    padding-top: 24px;
+}
+
+.contact-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 12px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--text-gray);
+}
+
+.contact-detail i {
+    color: var(--light-green);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .image-section {
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        padding: 20px;
+    }
+
+    .details-section {
+        padding: 20px;
+    }
+
+    .item-title {
+        font-size: 24px;
+    }
+
+    .item-price {
+        font-size: 20px;
+    }
+
+    .seller-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Additional Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.details-section {
+    animation: fadeIn 0.5s ease-out;
+}

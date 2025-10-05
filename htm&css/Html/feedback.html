@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Second Hand Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="logo">
+            <i class="bi bi-shop"></i>
+            <span>JNEC ONLINE ECO-TRADE</span>
+        </div>
+        <div class="user-profile">
+            <span>Welcome, Yoesel 👋</span>
+            <div class="notification-icon">
+                <i class="bi bi-bell-fill"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            <a href="#" class="profile-link">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../Html/index.html" class="back-arrow text-dark me-3"><i class="bi bi-arrow-left fs-4"></i></a>
+                <h2>User Activity</h2>
+            </div>
+            
+            <div class="sidebar-menu-group sidebar-user-menu">
+                <div class="menu-title">
+                    User Menu
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <a href="../Html/history.html" class="category-link">
+                    <i class="bi bi-clock-history"></i>
+                    <span>History</span>
+                </a>
+                <a href="feedback.html" class="category-link active">
+                    <i class="bi bi-chat-left-text"></i>
+                    <span>Feedback</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1><i class="bi bi-chat-left-text"></i> Seller Feedback</h1>
+                <p>Leave feedback for sellers you've contacted</p>
+            </div>
+
+            <!-- Seller Info Card -->
+            <div class="seller-card">
+                <div class="seller-info">
+                    <div class="seller-avatar">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <div class="seller-details">
+                        <h3>Karma Dorji</h3>
+                        <div class="seller-rating">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span class="rating-text">4.5 based on 12 reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Form -->
+            <div class="feedback-form-container">
+                <h2>Leave Your Feedback</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="rating">Rate the Seller</label>
+                        <div class="star-rating" id="starRating">
+                            <i class="bi bi-star" data-rating="1"></i>
+                            <i class="bi bi-star" data-rating="2"></i>
+                            <i class="bi bi-star" data-rating="3"></i>
+                            <i class="bi bi-star" data-rating="4"></i>
+                            <i class="bi bi-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="ratingValue" name="rating" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback</label>
+                        <textarea 
+                            id="feedback" 
+                            name="feedback" 
+                            rows="5" 
+                            placeholder="Was the seller responsive? Did the item match the description? Share your experience..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="bi bi-send"></i> Submit Feedback
+                    </button>
+                </form>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="reviews-section">
+                <h2>Recent Reviews</h2>
+                <div class="reviews-list" id="reviewsList">
+                    <!-- Reviews will be loaded by JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.32/sweetalert2.all.min.js"></script>
+    <script src="../js/feedback.js"></script>
+</body>
+</html>

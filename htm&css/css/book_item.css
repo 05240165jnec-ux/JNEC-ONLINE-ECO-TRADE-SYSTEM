@@ -1,0 +1,404 @@
+/* --- Global Styles with Eco-Friendly Green Theme --- */
+:root {
+    --primary-green: #2d6a4f;
+    --light-green: #52b788;
+    --accent-green: #74c69d;
+    --bg-cream: #f8f9fa;
+    --bg-light: #e8f5e9;
+    --card-bg: #ffffff;
+    --text-dark: #1b4332;
+    --text-gray: #52796f;
+    --hover-green: #40916c;
+    --border-color: #b7e4c7;
+}
+
+body {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+    padding-top: 56px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* --- Top Navigation Bar Styles --- */
+.top-main-navbar {
+    background: linear-gradient(90deg, #2d6a4f 0%, #40916c 100%) !important;
+    border-bottom: 3px solid var(--accent-green);
+    z-index: 1050;
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.2);
+}
+/* --- NEW STYLES: Top Navbar Icon & Text Colors --- */
+
+/* Style the notification bell and profile icon link text white */
+.top-main-navbar .nav-link {
+    color: #ffffff !important; /* Forces the text (like "Profile") to be white */
+    transition: color 0.3s ease;
+}
+
+/* Style the notification bell icon (which uses bi-bell-fill) white */
+.top-main-navbar .notification-icon-link i {
+    color: #ffffff !important; /* Forces the icon to be white */
+}
+
+/* Style the profile circle icon (bi-person-circle) white */
+.top-main-navbar .nav-link i.bi-person-circle {
+    color: #ffffff !important; /* Forces the icon to be white */
+}
+
+/* Ensure hover state is visible */
+.top-main-navbar .nav-link:hover {
+    color: var(--accent-green) !important; /* Light green hover for contrast */
+}
+
+/* Ensure the welcome message is also white */
+.top-main-navbar .welcome-message {
+    color: #ffffff !important;
+}
+
+.marketplace-nav-container {
+    max-width: 1400px;
+}
+
+.marketplace-nav-brand .text-primary {
+    color: var(--light-green) !important;
+}
+
+/* --- Marketplace Wrapper & Layout --- */
+.marketplace-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 56px); 
+    background-color: transparent;
+    align-items: flex-start;
+}
+
+/* --- Left Sidebar Styles --- */
+.left-sidebar {
+    flex-shrink: 0;
+    width: 320px;
+    padding: 16px;
+    padding-right: 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    border-right: 2px solid var(--border-color);
+    position: sticky;
+    top: 56px; 
+    height: calc(100vh - 56px); 
+    overflow-y: auto; 
+    display: block;
+    box-shadow: 2px 0 10px rgba(45, 106, 79, 0.1);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-right: 16px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--accent-green);
+}
+
+.sidebar-header .back-arrow {
+    flex-shrink: 0;
+    margin-right: 10px;
+    text-decoration: none;
+    color: var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.sidebar-header .back-arrow:hover {
+    color: var(--light-green);
+}
+
+.marketplace-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-green), var(--light-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0;
+    flex-grow: 1;
+    text-align: center;
+    margin-left: -35px;
+}
+/* --- START OF NEW SIDEBAR SEARCH BAR STYLES (To match the image) --- */
+
+/* Wrapper for the Search Input Field */
+.search-bar-wrapper {
+    /* Base styles for the capsule container, similar to the image */
+    background-color: #ffffff; 
+    border: 2px solid var(--accent-green); 
+    padding: 0; /* Remove padding to let input control size */
+    margin-bottom: 15px; /* Add margin to separate it from the menu items below */
+    border-radius: 50px; /* Highly rounded corners */
+    box-shadow: 0 2px 4px rgba(45, 106, 79, 0.1);
+    transition: all 0.3s ease;
+    display: flex; /* Flex to align the input field */
+    overflow: hidden; /* Hide anything that might stick out */
+    height: 48px; /* Set a fixed height for consistency */
+}
+
+/* Style for the actual text input field */
+.marketplace-search-input-sidebar {
+    /* Make the input take up the full space inside the wrapper */
+    flex-grow: 1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    background-color: transparent; /* Ensure background matches the wrapper */
+    
+    /* Remove default focus outline and replace with a custom effect */
+    outline: none;
+    box-shadow: none;
+}
+
+.marketplace-search-input-sidebar::placeholder {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* Focus state: Make the border darker green on focus */
+.search-bar-wrapper:focus-within {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 8px rgba(45, 106, 79, 0.4);
+}
+
+/* --- END OF NEW SIDEBAR SEARCH BAR STYLES --- */
+.sidebar-menu {
+    margin-bottom: 20px;
+    padding-right: 16px;
+}
+
+/* Style for all menu links */
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 6px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.sidebar-item:hover {
+    background: linear-gradient(90deg, var(--bg-light), #ffffff);
+    border-color: var(--border-color);
+    transform: translateX(5px);
+    color: var(--primary-green);
+}
+
+.sidebar-item.active {
+    background: linear-gradient(90deg, var(--light-green), var(--accent-green));
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+    border-color: var(--light-green);
+}
+
+.sidebar-item i {
+    font-size: 1.25rem;
+    margin-right: 12px;
+    width: 30px;
+    text-align: center;
+    color: var(--primary-green);
+}
+
+.sidebar-item.active i {
+    color: #ffffff;
+}
+
+/* Create Listing Button Style */
+.create-listing-btn {
+    width: calc(100% - 16px);
+    margin-left: 0;
+    margin-right: 16px;
+    margin-top: 15px;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--light-green), var(--accent-green));
+    border: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 40px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+}
+
+.create-listing-btn:hover {
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(82, 183, 136, 0.4);
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.create-listing-btn::before {
+    content: "\F473";
+    font-family: "bootstrap-icons";
+    font-weight: 900;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+}
+
+/* --- Right Main Content Styles --- */
+.main-content {
+    flex-grow: 1;
+    padding: 0 20px;
+    padding-top: 10px;
+    height: calc(100vh - 56px);
+    overflow-y: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-green);
+    text-shadow: 1px 1px 2px rgba(45, 106, 79, 0.1);
+    flex-shrink: 0;
+}
+
+.browse-items-container {
+    padding-bottom: 40px;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+.browse-items-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.browse-items-container::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 10px;
+}
+
+.browse-items-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--light-green), var(--accent-green));
+    border-radius: 10px;
+}
+
+.browse-items-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary-green), var(--hover-green));
+}
+
+/* --- Item Card Styling --- */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+.item-grid .col {
+    padding: 0; 
+}
+
+.card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(45, 106, 79, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(82, 183, 136, 0.25);
+    border-color: var(--light-green);
+}
+
+.card-img-top {
+    width: 100%;
+    max-width: 100%;
+    height: 120px;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+.card-body {
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 15px !important;
+}
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px !important;
+    word-wrap: break-word; 
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: var(--light-green);
+    font-weight: 700;
+    margin-bottom: 12px !important;
+}
+
+.card .btn {
+    font-size: 0.9rem;
+    padding: 10px;
+    background: linear-gradient(90deg, var(--light-green), var(--accent-green));
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+}
+
+/* --- Mobile Specific Overrides --- */
+@media (max-width: 991.98px) {
+    .left-sidebar {
+        display: none;
+    }
+    .main-content {
+        height: auto;
+        overflow-y: visible;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Additional Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
