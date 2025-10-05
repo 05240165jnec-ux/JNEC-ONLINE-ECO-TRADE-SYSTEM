@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/switch_account.css">
+</head>
+<body>
+    <div class="full-screen-container">
+        <div class="account-container">
+            <div class="account-header">
+                <button class="back-button" id="backButton">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                
+                <div class="account-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h1>Switch Account</h1>
+                <p>Select an account to continue or add a new one</p>
+            </div>
+            
+            <div class="account-content" id="accountContent">
+                <!-- Account List -->
+                <div class="account-list" id="accountList">
+                    <div class="account-item active" data-account="rabien">
+                        <div class="account-avatar">R</div>
+                        <div class="account-info">
+                            <div class="account-name">Rabien</div>
+                            <div class="account-status">Currently signed in</div>
+                        </div>
+                        <div class="account-actions">
+                            <button class="sign-in-btn">Signed In</button>
+                            <button class="remove-btn">
+                                <i class="fas fa-trash-alt me-1"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="account-item" data-account="soyen">
+                        <div class="account-avatar">S</div>
+                        <div class="account-info">
+                            <div class="account-name">Soyen</div>
+                            <div class="account-status">Signed in on this device</div>
+                        </div>
+                        <div class="account-actions">
+                            <button class="sign-in-btn">Switch</button>
+                            <button class="remove-btn">
+                                <i class="fas fa-trash-alt me-1"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="account-item" data-account="john">
+                        <div class="account-avatar">J</div>
+                        <div class="account-info">
+                            <div class="account-name">John</div>
+                            <div class="account-status">Available to sign in</div>
+                        </div>
+                        <div class="account-actions">
+                            <button class="sign-in-btn">Switch</button>
+                            <button class="remove-btn">
+                                <i class="fas fa-trash-alt me-1"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="add-account" id="addAccount">
+                    <div class="add-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="add-account-text">Add New Account</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remove Account Confirmation Modal -->
+    <div class="modal fade" id="removeAccountModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Remove Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to remove this account? You will need to sign in again to access it.</p>
+                    <p><strong>Account: <span id="accountToRemove"></span></strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmRemove">Remove Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

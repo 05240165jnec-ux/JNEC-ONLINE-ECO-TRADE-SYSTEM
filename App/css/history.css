@@ -1,0 +1,35 @@
+/* For history */
+/* Fullscreen Layout */
+.history-container {
+  height: 100vh;
+  width: 100vw;
+  background: #f4fff4;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #0d6efd;
+}
+
+/* Item layout */
+.item {
+  background: rgba(202, 198, 198, 0.769);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Item icons */
+.item-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
