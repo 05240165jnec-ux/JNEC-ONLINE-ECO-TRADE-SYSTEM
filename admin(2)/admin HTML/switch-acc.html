@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Switch Account</title>
+    <link rel="stylesheet" href="../admin CSS/switch-acc.css">
+</head>
+<body>
+        <div class="app-container">
+        <!-- Sidebar - Same as in home.html -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <!-- Circular Logo Container with Shimmer Effect -->
+                <div class="logo-container">
+                    <div class="shimmer-overlay"></div>
+                    <!-- Replace this div with your actual logo image -->
+                    <div class="logo-placeholder">
+                        <img src="../images/logo.png" alt="Your Logo" class="logo-image">
+                    </div>
+                </div>
+                
+                <!-- Admin Info Below Logo -->
+                <div class="admin-info">
+                    <div class="admin-name">Ugyen Namgyel</div>
+                    <div class="admin-role">Administrator</div>
+                </div>
+            </div>
+            
+            <!-- Updated Sidebar Navigation -->
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <a href="home.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="Active-listings.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <span>Manage Listings</span>
+                    </a>
+                    
+                    <a href="Item-category.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l-5.5 9h11z M12 22l5.5-9h-11z M3.5 9l5.5 9v-11z M20.5 9l-5.5 9v-11z"/>
+                        </svg>
+                        <span>Item Category</span>
+                    </a>
+                    
+                    <a href="Manage-user.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63c-.34-1.02-1.28-1.37-2.21-1.37-.93 0-1.87.35-2.21 1.37L13 16h2.5v6h4.5zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2.5 16v-6H10.5l-2.54-7.63C7.62 7.35 6.68 7 5.75 7s-1.87.35-2.21 1.37L1 16h2.5v6H8z"/>
+                        </svg>
+                        <span>Manage User</span>
+                    </a>
+                    
+                    <a href="feedback.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
+                        </svg>
+                        <span>Feedback</span>
+                    </a>
+                    
+                    <a href="profile.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <span>Profile</span>
+                    </a>
+                    
+                    <a href="switch-acc.html" class="nav-item active">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63c-.34-1.02-1.28-1.37-2.21-1.37-.93 0-1.87.35-2.21 1.37L13 16h2.5v6h4.5zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2.5 16v-6H10.5l-2.54-7.63C7.62 7.35 6.68 7 5.75 7s-1.87.35-2.21 1.37L1 16h2.5v6H8z"/>
+                        </svg>
+                        <span>Switch Account</span>
+                    </a>
+                    
+                    <a href="logout.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                        </svg>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-left">
+                    <h1 class="page-title">Switch Account</h1>
+                    <p class="page-subtitle">Manage and switch between different administrative accounts and user roles</p>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <svg class="search-icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search accounts...">
+                    </div>
+                    
+                    <button class="notification-btn" onclick="toggleNotifications()">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <div class="notification-badge">3</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notification Popup -->
+            <div class="notification-popup" id="notificationPopup">
+                <div class="notification-header">
+                    <h3>System Notifications</h3>
+                    <button class="close-notifications" onclick="toggleNotifications()">×</button>
+                </div>
+                <div class="notification-list">
+                    <div class="notification-item unread">
+                        <div class="notification-icon">👤</div>
+                        <div class="notification-content">
+                            <div class="notification-title">Account Switch Available</div>
+                            <div class="notification-message">You can now switch to different user roles</div>
+                            <div class="notification-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="notification-item unread">
+                        <div class="notification-icon">🔒</div>
+                        <div class="notification-content">
+                            <div class="notification-title">Security Notice</div>
+                            <div class="notification-message">Remember to log out after switching accounts</div>
+                            <div class="notification-time">1 day ago</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">📊</div>
+                        <div class="notification-content">
+                            <div class="notification-title">User Activity Report</div>
+                            <div class="notification-message">Monthly user activity report is ready</div>
+                            <div class="notification-time">3 days ago</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-footer">
+                    <button class="mark-all-read" onclick="markAllAsRead()">Mark all as read</button>
+                </div>
+            </div>
+
+            <!-- Switch Account Container -->
+            <div class="switch-account-container">
+                <!-- Current Account Section -->
+                <div class="current-account-section">
+                    <h3 class="section-title">Current Account</h3>
+                    <div class="current-account-card">
+                        <div class="account-avatar">UN</div>
+                        <div class="account-info">
+                            <div class="account-name">Uygen Namgyel</div>
+                            <div class="account-role">System Administrator</div>
+                            <div class="account-details">
+                                <div class="account-detail">
+                                    <div class="detail-label">Department</div>
+                                    <div class="detail-value">Administration</div>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-label">Email</div>
+                                    <div class="detail-value">uygen.namgyel@jnec.edu.bt</div>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-label">Last Active</div>
+                                    <div class="detail-value">Today, 10:30 AM</div>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-label">Session Duration</div>
+                                    <div class="detail-value">2 hours 15 minutes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="current-badge">CURRENT</div>
+                    </div>
+                </div>
+
+                <!-- User Type Tabs -->
+                <div class="user-type-tabs">
+                    <button class="user-type-tab active" onclick="switchUserType('admin')">Administrative Accounts</button>
+                    <button class="user-type-tab" onclick="switchUserType('user')">Regular User Accounts</button>
+                </div>
+
+                <!-- Administrative Accounts Section -->
+                <div class="account-type-section active" id="admin-accounts">
+                    <div class="account-type-description">
+                        Switch between different administrative roles with varying permissions and access levels.
+                    </div>
+                    
+                    <div class="accounts-grid">
+                        <!-- Product Manager Account -->
+                        <div class="account-card" onclick="selectAccount(this)">
+                            <div class="account-header">
+                                <div class="account-avatar-small">PM</div>
+                                <div class="account-info-small">
+                                    <div class="account-name-small">Product Manager</div>
+                                    <div class="account-role-small">Product Management Team</div>
+                                </div>
+                                <div class="account-status">
+                                    <span class="status-online">●</span> Online
+                                </div>
+                            </div>
+                            <div class="account-permissions">
+                                <div class="permissions-title">PERMISSIONS</div>
+                                <div class="permissions-list">
+                                    <span class="permission-tag">Inventory</span>
+                                    <span class="permission-tag">Listings</span>
+                                    <span class="permission-tag">Categories</span>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <div class="last-active">Last active: 2 hours ago</div>
+                                <button class="select-btn">Select</button>
+                            </div>
+                        </div>
+
+                        <!-- Sales Manager Account -->
+                        <div class="account-card" onclick="selectAccount(this)">
+                            <div class="account-header">
+                                <div class="account-avatar-small">SM</div>
+                                <div class="account-info-small">
+                                    <div class="account-name-small">Sales Manager</div>
+                                    <div class="account-role-small">Sales & Analytics Team</div>
+                                </div>
+                                <div class="account-status">
+                                    <span class="status-online">●</span> Online
+                                </div>
+                            </div>
+                            <div class="account-permissions">
+                                <div class="permissions-title">PERMISSIONS</div>
+                                <div class="permissions-list">
+                                    <span class="permission-tag">Reports</span>
+                                    <span class="permission-tag">Analytics</span>
+                                    <span class="permission-tag">Transactions</span>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <div class="last-active">Last active: Yesterday</div>
+                                <button class="select-btn">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular User Accounts Section -->
+                <div class="account-type-section" id="user-accounts">
+                    <div class="account-type-description">
+                        Experience the platform as a regular user to better understand user workflows and identify potential improvements.
+                    </div>
+                    
+                    <div class="accounts-grid">
+                        <!-- Regular User Account -->
+                        <div class="account-card" onclick="selectAccount(this)">
+                            <div class="account-header">
+                                <div class="account-avatar-small">RU</div>
+                                <div class="account-info-small">
+                                    <div class="account-name-small">Regular User</div>
+                                    <div class="account-role-small">Standard Platform User</div>
+                                </div>
+                                <div class="account-status">
+                                    <span class="status-online">●</span> Online
+                                </div>
+                            </div>
+                            <div class="account-permissions">
+                                <div class="permissions-title">CAPABILITIES</div>
+                                <div class="permissions-list">
+                                    <span class="permission-tag">Browse Items</span>
+                                    <span class="permission-tag">Make Purchases</span>
+                                    <span class="permission-tag">Submit Feedback</span>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <div class="last-active">Last active: 30 minutes ago</div>
+                                <button class="select-btn">Select</button>
+                            </div>
+                        </div>
+
+                        <!-- Vendor Account -->
+                        <div class="account-card" onclick="selectAccount(this)">
+                            <div class="account-header">
+                                <div class="account-avatar-small">VA</div>
+                                <div class="account-info-small">
+                                    <div class="account-name-small">Vendor Account</div>
+                                    <div class="account-role-small">Product Seller</div>
+                                </div>
+                                <div class="account-status">
+                                    <span class="status-online">●</span> Online
+                                </div>
+                            </div>
+                            <div class="account-permissions">
+                                <div class="permissions-title">CAPABILITIES</div>
+                                <div class="permissions-list">
+                                    <span class="permission-tag">List Products</span>
+                                    <span class="permission-tag">Manage Inventory</span>
+                                    <span class="permission-tag">View Sales</span>
+                                </div>
+                            </div>
+                            <div class="account-footer">
+                                <div class="last-active">Last active: 1 hour ago</div>
+                                <button class="select-btn">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Section -->
+                <div class="quick-actions-section">
+                    <h3 class="section-title">Quick Actions</h3>
+                    <div class="quick-actions">
+                        <div class="action-card" onclick="createNewAccount()">
+                            <div class="action-icon">➕</div>
+                            <div class="action-title">Create New Account</div>
+                            <div class="action-desc">Add a new administrative account</div>
+                        </div>
+                        <div class="action-card" onclick="managePermissions()">
+                            <div class="action-icon">🔐</div>
+                            <div class="action-title">Manage Permissions</div>
+                            <div class="action-desc">Configure account access levels</div>
+                        </div>
+                        <div class="action-card" onclick="viewActivityLog()">
+                            <div class="action-icon">📊</div>
+                            <div class="action-title">View Activity Log</div>
+                            <div class="action-desc">Monitor account usage history</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-success" onclick="switchToSelectedAccount()">
+                        <i>🔄</i> Switch to Selected Account
+                    </button>
+                    <button class="btn btn-outline" onclick="cancelSwitch()">
+                        <i>❌</i> Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../admin JS/switch-acc.js"></script>
+</body>
+</html>

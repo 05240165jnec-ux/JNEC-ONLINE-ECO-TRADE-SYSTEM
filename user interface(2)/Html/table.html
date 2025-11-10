@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details - Table</title>
+    <link rel="stylesheet" href="../css/table.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="page-title">Item Details</h1>
+            <button class="wishlist-btn" id="wishlistBtn">
+                <a href="../Html/index.html" class="back-arrow-desktop text-dark me-3"></a>
+                <i class="far fa-heart"></i>
+            </button>
+        </header>
+
+        <div class="content">
+            <div class="image-section">
+                <img src="../image/Table.png" alt="Table" class="item-image">
+            </div>
+
+            <div class="details-section">
+                <div class="title-section">
+                    <h2 class="item-title">Table</h2>
+                    <p class="item-price">Nu 350</p>
+                    <p class="posted-time">Listed on 01/02/2025 in Bhutan</p>
+                </div>
+
+                <div class="details-card">
+                    <h3 class="section-title">Details</h3>
+                    <div class="detail-row">
+                        <span class="detail-label">Condition:</span>
+                        <span class="detail-value">Good</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Category:</span>
+                        <span class="detail-value">Furniture</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Posted on:</span>
+                        <span class="detail-value">01/02/2025</span>
+                    </div>
+                    <div class="description">
+                        <h4 class="description-title">Description</h4>
+                        <p class="description-text">Used only 3 months</p>
+                    </div>
+                </div>
+
+                <div class="seller-card">
+                    <div class="seller-header">
+                        <h3 class="section-title">Seller information</h3>
+                        <button class="seller-details-link" id="sellerDetailsBtn">Seller details</button>
+                    </div>
+                    <div class="seller-info" id="sellerInfo">
+                        <div class="seller-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="seller-data">
+                            <p class="seller-name">Yoesel Dema</p>
+                            <p class="seller-contact">Contact: 17229645</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="book-now-btn" id="bookNowBtn">Book now!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seller Profile Modal -->
+    <div class="modal" id="sellerModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="modal-seller-name">Yoesel Dema</h2>
+            </div>
+            <div class="modal-body">
+                <div class="rating-section">
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="rating-text">3.5 out of 5</p>
+                    <p class="rating-count">(28 reviews)</p>
+                </div>
+                <div class="seller-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-box"></i>
+                        <p class="stat-label">Total Items</p>
+                        <p class="stat-value">15</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p class="stat-label">Items Sold</p>
+                        <p class="stat-value">42</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <p class="stat-label">Member Since</p>
+                        <p class="stat-value">Jan 2025</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3 class="contact-title">Contact Information</h3>
+                    <p class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <span>17229645</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/table.js"></script>
+</body>
+</html>

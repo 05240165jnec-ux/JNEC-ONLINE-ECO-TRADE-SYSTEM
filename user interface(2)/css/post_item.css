@@ -1,0 +1,623 @@
+:root {
+    --primary-green: #2d6a4f;
+    --light-green: #52b788;
+    --accent-green: #74c69d;
+    --light-gray-bg: #f1f8f4;
+    --preview-bg: #e8f5e9;
+    --dark-text: #1b4332;
+    --text-gray: #52796f;
+    --border-color: #b7e4c7;
+    --hover-green: #40916c;
+    --navbar-height: 75px;
+}
+
+body {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+    margin: 0;
+    padding-top: var(--navbar-height);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* --- Top Navigation Bar Styles (Desktop) --- */
+.navbar {
+    background: linear-gradient(90deg, var(--primary-green) 0%, var(--hover-green) 100%) !important;
+    border-bottom: 3px solid var(--accent-green);
+    box-shadow: 0 3px 10px rgba(45, 106, 79, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1070;
+    height: 13%;
+}
+
+.navbar-brand,
+.navbar .nav-link {
+    color: #ffffff !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--accent-green) !important;
+}
+
+.navbar .btn-outline-secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+}
+
+.navbar .btn-outline-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
+
+.navbar .dropdown-toggle {
+    color: #ffffff !important;
+}
+
+/* Back Arrow Desktop */
+.back-arrow-desktop {
+    color: #000000 !important;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.back-arrow-desktop:hover {
+    transform: translateX(-5px);
+    color: var(--primary-green) !important;
+}
+
+.back-arrow-desktop i {
+    font-size: 24px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: calc(100vh - 70px);
+    top: 70px;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    flex-grow: 1;
+    color: white;
+}
+
+.back-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white !important;
+    margin-right: 0 !important;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+}
+
+.back-arrow i {
+    font-size: 28px !important;
+}
+
+.back-arrow:hover {
+    transform: translateX(-5px);
+    color: #f0f0f0 !important;
+}
+
+/* --- Mobile Top Header (Fixed on Mobile) --- */
+.top-header {
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.top-header .form-title {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.top-header .back-arrow {
+    color: #ffffff !important;
+}
+
+.top-header .back-arrow:hover {
+    color: var(--accent-green) !important;
+}
+
+/* --- Main Marketplace Listing Wrapper --- */
+.marketplace-listing-wrapper {
+    height: calc(100vh - var(--navbar-height));
+    padding: 0;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+/* --- 1. Left Column: Form Styles --- */
+.listing-form-col {
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    height: 100%;
+    border-right: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Form header - FIXED/STICKY */
+.form-container > h2 {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    z-index: 10;
+    padding: 1.2rem 0;
+    margin: 0;
+    color: var(--primary-green);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(45, 106, 79, 0.1);
+    border-bottom: 2px solid var(--border-color);
+    line-height: 1.2;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem 1.5rem;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* Custom Scrollbar for Form Container */
+.form-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.form-container::-webkit-scrollbar-track {
+    background: #e8f5e9;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--light-green), var(--accent-green));
+    border-radius: 10px;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary-green), var(--hover-green));
+}
+
+.form-container p.h4 {
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.seller-info {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    background-color: #e8f5e9;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--light-green);
+    margin-bottom: 1.5rem;
+}
+
+.seller-info i {
+    color: var(--light-green);
+}
+
+/* Form Labels */
+.form-label {
+    color: var(--dark-text);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Image Upload Section */
+.upload-section {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    display: block;
+    text-align: left;
+    padding: 20px !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    transition: all 0.3s ease;
+}
+
+.upload-section:hover {
+    border-color: var(--light-green);
+    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+}
+
+.upload-section p {
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.upload-section .btn {
+    background: linear-gradient(90deg, var(--light-green), var(--accent-green));
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.upload-section .btn:hover {
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    transform: translateY(-2px);
+}
+
+.image-preview-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.image-preview-grid .uploaded-image-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 2px 6px rgba(45, 106, 79, 0.1);
+    transition: all 0.3s ease;
+}
+
+.image-preview-grid .uploaded-image-container:hover {
+    transform: scale(1.05);
+    border-color: var(--light-green);
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.2);
+}
+
+.image-preview-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.remove-image-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: linear-gradient(90deg, #e63946, #d62828);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(230, 57, 70, 0.3);
+    transition: all 0.3s ease;
+}
+
+.remove-image-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 3px 10px rgba(230, 57, 70, 0.5);
+}
+
+/* Form Inputs */
+.form-control, 
+.form-select {
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    border-color: var(--light-green);
+    box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.2);
+    outline: none;
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--light-green), var(--accent-green));
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, var(--primary-green), var(--hover-green));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(82, 183, 136, 0.4);
+}
+
+.btn-secondary {
+    background-color: #f8f9fa;
+    border: 2px solid var(--border-color);
+    color: var(--text-gray);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(90deg, #e8f5e9, #ffffff);
+    border-color: var(--light-green);
+    color: var(--primary-green);
+}
+
+/* --- 2. Right Column: Preview Styles (Desktop Only) --- */
+.preview-panel-col {
+    background: linear-gradient(135deg, var(--preview-bg) 0%, #f1f8f4 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Preview heading - FIXED/STICKY */
+.preview-heading {
+    position: relative;
+    background: linear-gradient(135deg, var(--preview-bg) 0%, #f1f8f4 100%);
+    z-index: 100;
+    margin: 0;
+    padding: 1.2rem 1.5rem;
+    width: 100%;
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(45, 106, 79, 0.1);
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(45, 106, 79, 0.1);
+    flex-shrink: 0;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Scrollable preview content area */
+.preview-scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+}
+
+/* Custom Scrollbar for Preview Content */
+.preview-scrollable-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.preview-scrollable-content::-webkit-scrollbar-track {
+    background: #e8f5e9;
+}
+
+.preview-scrollable-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--light-green), var(--accent-green));
+    border-radius: 10px;
+}
+
+.preview-scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary-green), var(--hover-green));
+}
+
+.listing-preview-card {
+    width: 90%;
+    max-width: 800px;
+    min-height: 800px;
+    display: flex;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 20px rgba(45, 106, 79, 0.15);
+    transition: all 0.3s ease;
+    margin-bottom: 3rem;
+}
+
+.listing-preview-card:hover {
+    box-shadow: 0 8px 30px rgba(82, 183, 136, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Image Area (Left side of card - 60%) */
+.preview-image-placeholder {
+    width: 60%;
+    min-height: 800px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #d8f3dc 100%);
+    overflow: hidden;
+    position: relative;
+    border-right: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+.preview-image-placeholder i {
+    font-size: 4rem;
+    color: var(--accent-green);
+    opacity: 0.5;
+}
+
+.preview-image-placeholder p,
+.preview-image-placeholder h5,
+.preview-image-placeholder small {
+    color: var(--text-gray);
+}
+
+.preview-image-placeholder h5 {
+    font-weight: 600;
+}
+
+.preview-details-sidebar {
+    width: 40%;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+    overflow: visible;
+}
+
+/* Image covers full space - no top/bottom gaps */
+.preview-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    object-position: center;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.preview-details-label {
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.preview-details-sidebar h1,
+.preview-details-sidebar h3 {
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.preview-details-sidebar h2 {
+    color: var(--light-green) !important;
+    font-weight: 700;
+}
+
+.preview-details-sidebar p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.seller-preview-info {
+    font-size: 1rem;
+    padding: 15px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+    border-radius: 10px;
+    border-left: 4px solid var(--light-green);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.seller-preview-info i {
+    color: var(--light-green);
+}
+
+.seller-preview-info strong {
+    color: var(--primary-green);
+}
+
+.preview-details-sidebar .btn-secondary {
+    background: linear-gradient(90deg, #e8f5e9, #d8f3dc);
+    border: 2px solid var(--border-color);
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.preview-details-sidebar hr {
+    border-color: var(--border-color);
+    opacity: 1;
+}
+
+/* --- Desktop Column Width Override (New Rule) --- */
+@media (min-width: 992px) {
+    .listing-form-col {
+        width: 33.33% !important;
+        max-width: 33.33% !important;
+    }
+
+    .preview-panel-col {
+        width: 66.67% !important;
+        max-width: 66.67% !important;
+    }
+}
+
+/* --- Mobile Specific Overrides (Screen width < 992px) --- */
+@media (max-width: 991px) {
+    body {
+        padding-top: 0;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .marketplace-listing-wrapper {
+        height: 100vh;
+        padding-top: 70px;
+    }
+
+    .top-header {
+        display: block !important;
+        height: 70px;
+    }
+
+    .listing-form-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: calc(100vh - 70px);
+        border-right: none;
+    }
+
+    .preview-panel-col {
+        display: none;
+    }
+
+    .form-container {
+        max-width: 100%;
+        padding: 0 1rem 2rem 1rem;
+    }
+}

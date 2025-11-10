@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - JNEC Online Eco-Trade</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/setting.css">
+</head>
+<body>
+    <!-- Marketplace Wrapper -->
+    <div class="marketplace-wrapper">
+        
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <!-- Fixed Logo Section -->
+            <div class="sidebar-logo-container">
+                <img src="../image/logo.png" alt="JNEC Logo" class="sidebar-logo">
+            </div>
+            <div class="sidebar-header">
+                <h1 id="marketplace" class="h4 marketplace-title">Marketplace</h1>
+            </div>
+            
+            <!-- Scrollable Content -->
+            <div class="sidebar-scrollable">                
+                <div class="sidebar-menu">
+                    <a href="../Html/Dashboard.html" class="sidebar-item">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="#" class="sidebar-item">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Browse all</span>
+                    </a>
+                    
+                    <a href="../Html/book_item.html" class="sidebar-item">
+                        <i class="bi bi-inbox-fill"></i>
+                        <span>My Booking</span>
+                    </a>
+                    
+                    <a href="../Html/selling.html" class="sidebar-item">
+                        <i class="bi bi-person-fill"></i>
+                        <span>My Listings</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-menu-group sidebar-user-menu">
+                    <div class="menu-title">
+                        User Menu
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <a href="#" class="category-link active">
+                        <i class="bi bi-gear-fill"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="../Html/feedback.html" class="category-link">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span>Feedback</span>
+                    </a>
+                    <a href="#" class="category-link logout-link">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-location">
+                    <div class="location-text">
+                        <strong>Location</strong>
+                        <span class="location-link" onclick="editLocation()">Edit</span>
+                    </div>
+                    <div class="location-value">JNEC, Bhutan</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Container -->
+            <div class="dashboard-header-container">
+                <div class="header-left">
+                    <h1 class="dashboard-main-title">Settings</h1>
+                    <p class="dashboard-subtitle">Manage your account settings and preferences</p>
+                </div>
+                <div class="header-right">
+                    <span class="welcome-message">Welcome, Yoesel!</span>
+                    
+                    <!-- Notification Bell with Dropdown -->
+                    <div class="notification-wrapper">
+                        <a class="notification-icon-link" href="#" id="notificationBtn">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="badge rounded-pill bg-danger notification-badge">3</span>
+                        </a>
+                        
+                        <!-- Notification Dropdown -->
+                        <div class="dropdown notification-dropdown" id="notificationDropdown">
+                            <div class="dropdown-header">
+                                <h3>Notifications</h3>
+                                <button class="mark-read-btn">Mark all as read</button>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon order">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">New Booking</p>
+                                        <p class="notification-text">Sonam yeshi booked your item</p>
+                                        <span class="notification-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-item unread">
+                                    <div class="notification-icon message">
+                                        <i class="fas fa-message"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">New Message</p>
+                                        <p class="notification-text">You have a message from customer</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-item unread">
+                                    <div class="notification-icon payment">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Saved item</p>
+                                        <p class="notification-text">yeshi added your item to favorites</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="../Html/notification.html" class="view-all-btn">View All Notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile with Dropdown -->
+                    <div class="profile-wrapper">
+                        <a class="profile-link" href="#" id="profileBtn">
+                            <i class="bi bi-person-circle"></i>
+                            <span>Profile</span>
+                        </a>
+                        
+                        <!-- Profile Dropdown -->
+                        <div class="dropdown profile-dropdown" id="profileDropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <h4>Yoesel</h4>
+                                    <p>yoesel@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-menu">
+                                <a href="../Html/setting.html" class="profile-menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="../Html/book_item.html" class="profile-menu-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Saved</span>
+                                </a>
+                                <a href="../Html/setting.html" class="profile-menu-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Help & Support</span>
+                                </a>
+                                <div class="divider"></div>
+                                <a href="#" class="profile-menu-item logout">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="dashboard-content">
+                <!-- Settings Navigation -->
+                <div class="settings-nav">
+                    <button class="tab-btn active" data-tab="profile">Profile</button>
+                    <button class="tab-btn" data-tab="notification">Notifications</button>
+                    <button class="tab-btn" data-tab="feedback">Feedback</button>
+                </div>
+
+                <!-- Profile Tab -->
+                <div id="profile" class="tab-content active">
+                    <div class="settings-card">
+                        <h2>Profile Information</h2>
+                        
+                        <div class="profile-photo-section">
+                            <div class="profile-photo">
+                                <img id="profileImage" src="https://via.placeholder.com/150" alt="Profile">
+                            </div>
+                            <div class="photo-upload">
+                                <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                                <button class="btn-secondary" onclick="document.getElementById('photoUpload').click()">
+                                    Upload Photo
+                                </button>
+                                <p class="help-text">Maximum file size: 5MB. Formats: JPG, PNG</p>
+                            </div>
+                        </div>
+
+                        <form class="profile-form">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" value="Yoesel" placeholder="Enter your full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="yoesel@jnec.edu.bt" placeholder="Enter your email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" value="+975 17123456" placeholder="Enter your phone number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" value="JNEC, Bhutan" placeholder="Enter your location">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bio">Bio</label>
+                                <textarea id="bio" rows="4" placeholder="Tell us about yourself"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-card">
+                        <h2>Change Password</h2>
+                        <form class="password-form">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" placeholder="Enter current password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" placeholder="Enter new password">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                            </div>
+
+                            <div class="password-requirements">
+                                <p>Password must contain:</p>
+                                <ul>
+                                    <li id="length">At least 8 characters</li>
+                                    <li id="uppercase">One uppercase letter</li>
+                                    <li id="lowercase">One lowercase letter</li>
+                                    <li id="number">One number</li>
+                                </ul>
+                            </div>
+
+                            <button type="submit" class="btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Notification Tab -->
+                <div id="notification" class="tab-content">
+                    <div class="settings-card">
+                        <h2>Notification Preferences</h2>
+                        
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>Email Notifications</h3>
+                                <p>Receive notifications about your account via email</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>New Items Alert</h3>
+                                <p>Get notified when new items are listed in your favorite categories</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>Booking Updates</h3>
+                                <p>Receive updates about your booking item</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>Price Drops</h3>
+                                <p>Get notified when items you're watching have price reductions</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="notification-setting">
+                            <div class="setting-info">
+                                <h3>Item Interest</h3>
+                                <p>Receive alerts when someone is interested in the item you listed</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <button class="btn-primary">Save Preferences</button>
+                    </div>
+                </div>
+
+                <!-- Feedback Tab -->
+                <div id="feedback" class="tab-content">
+                    <div class="settings-card">
+                        <h2>Send Us Your Feedback</h2>
+                        <p class="feedback-intro">We value your opinion! Help us improve JNEC ECO-TRADE by sharing your thoughts and suggestions.</p>
+                        
+                        <form class="feedback-form">
+                            <div class="form-group">
+                                <label for="feedbackType">Feedback Type</label>
+                                <select id="feedbackType">
+                                    <option value="">Select feedback type</option>
+                                    <option value="bug">Bug Report</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="improvement">Improvement Suggestion</option>
+                                    <option value="compliment">Compliment</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="feedbackSubject">Subject</label>
+                                <input type="text" id="feedbackSubject" placeholder="Brief description of your feedback">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="feedbackMessage">Message</label>
+                                <textarea id="feedbackMessage" rows="6" placeholder="Please provide detailed feedback here..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Rate Your Experience</label>
+                                <div class="rating-stars">
+                                    <span class="star" data-rating="1">☆</span>
+                                    <span class="star" data-rating="2">☆</span>
+                                    <span class="star" data-rating="3">☆</span>
+                                    <span class="star" data-rating="4">☆</span>
+                                    <span class="star" data-rating="5">☆</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="followUp">
+                                    <span>I would like to be contacted about this feedback</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-primary">Submit Feedback</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-card">
+                        <h2>Your Previous Feedback</h2>
+                        <div class="feedback-history">
+                            <div class="feedback-item">
+                                <div class="feedback-header">
+                                    <span class="feedback-type-badge bug">Bug Report</span>
+                                    <span class="feedback-date">Sept 28, 2025</span>
+                                </div>
+                                <h3>Search function not working properly</h3>
+                                <p>The search bar doesn't show results when I type...</p>
+                                <span class="feedback-status resolved">Resolved</span>
+                            </div>
+
+                            <div class="feedback-item">
+                                <div class="feedback-header">
+                                    <span class="feedback-type-badge feature">Feature Request</span>
+                                    <span class="feedback-date">Sept 15, 2025</span>
+                                </div>
+                                <h3>Add wishlist functionality</h3>
+                                <p>It would be great to save items for later...</p>
+                                <span class="feedback-status pending">Under Review</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/setting.js"></script>
+</body>
+</html>

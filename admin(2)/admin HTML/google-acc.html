@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login - JNEC Eco-Trade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            color: var(--gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: auto;
+            background: #f8fafc;
+        }
+
+        /* Background Image with Overlay */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+
+        .background-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 50%, rgba(102, 126, 234, 0.85) 100%);
+            z-index: -1;
+        }
+
+        .google-login-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .google-login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin: auto;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-subtitle {
+            color: var(--gray-500);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .google-icon-large {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+        }
+
+        .login-subtitle {
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .account-list {
+            margin-bottom: 2rem;
+        }
+
+        .account-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .account-item:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .account-item.selected {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .account-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .account-info {
+            flex: 1;
+        }
+
+        .account-name {
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 0.25rem;
+        }
+
+        .account-email {
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .account-check {
+            color: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .account-item.selected .account-check {
+            opacity: 1;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:disabled {
+            background: var(--gray-300);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gray-300);
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            color: var(--gray-400);
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--gray-300);
+        }
+
+        .divider-text {
+            padding: 0 1rem;
+            font-size: 14px;
+        }
+
+        .login-footer {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 14px;
+            margin-top: 2rem;
+        }
+
+        .login-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .login-progress {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            color: var(--gray-500);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: var(--gray-400);
+            margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .terms a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .google-login-container {
+                padding: 2rem;
+            }
+            
+            .account-item {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .google-login-container {
+                padding: 1.5rem;
+            }
+            
+            .login-title {
+                font-size: 24px;
+            }
+            
+            .account-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .account-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background-image"></div>
+    
+    <!-- Google Login Wrapper -->
+    <div class="google-login-wrapper">
+        <!-- Google Login Container -->
+        <div class="google-login-container">
+            <div class="logo-container">
+                <div class="logo">JNEC Eco-Trade</div>
+                <div class="logo-subtitle">Sustainable Trading Platform</div>
+            </div>
+
+            <div class="google-icon-large">
+                <svg width="64" height="64" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+
+            <h2 class="login-title">Choose an account</h2>
+            <p class="login-subtitle">to continue to JNEC Eco-Trade System</p>
+
+            <div class="account-list">
+                <div class="account-item" onclick="selectAccount(this)">
+                    <div class="account-avatar">UN</div>
+                    <div class="account-info">
+                        <div class="account-name">Uygen Namgyel</div>
+                        <div class="account-email">uynamgyel@example.com</div>
+                    </div>
+                    <div class="account-check">✓</div>
+                </div>
+                
+                <div class="account-item" onclick="selectAccount(this)">
+                    <div class="account-avatar">JD</div>
+                    <div class="account-info">
+                        <div class="account-name">Jigme Dorji</div>
+                        <div class="account-email">jigmedorji@example.com</div>
+                    </div>
+                    <div class="account-check">✓</div>
+                </div>
+                
+                <div class="account-item" onclick="selectAccount(this)">
+                    <div class="account-avatar">PD</div>
+                    <div class="account-info">
+                        <div class="account-name">Pema Dema</div>
+                        <div class="account-email">pemadema@example.com</div>
+                    </div>
+                    <div class="account-check">✓</div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="continue-btn" onclick="continueWithGoogle()" disabled>
+                Continue
+            </button>
+
+            <div class="divider">
+                <span class="divider-text">Or</span>
+            </div>
+
+            <button class="btn btn-outline" onclick="useAnotherAccount()">
+                <svg width="18" height="18" viewBox="0 0 24 24" style="margin-right: 8px;">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Use another account
+            </button>
+
+            <div class="login-progress" id="login-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">Signing in...</div>
+            </div>
+
+            <div class="login-footer">
+                <a href="login.html">← Back to regular login</a>
+            </div>
+
+            <div class="terms">
+                By continuing, you agree to JNEC Eco-Trade's 
+                <a href="#">Terms of Service</a> and acknowledge our 
+                <a href="#">Privacy Policy</a>.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedAccount = null;
+
+        function selectAccount(element) {
+            // Remove selection from all accounts
+            const accounts = document.querySelectorAll('.account-item');
+            accounts.forEach(account => account.classList.remove('selected'));
+            
+            // Add selection to clicked account
+            element.classList.add('selected');
+            selectedAccount = element;
+            
+            // Enable continue button
+            document.getElementById('continue-btn').disabled = false;
+        }
+
+        function continueWithGoogle() {
+            if (!selectedAccount) return;
+            
+            // Show progress
+            const progress = document.getElementById('login-progress');
+            const progressFill = document.getElementById('progress-fill');
+            const progressText = document.getElementById('progress-text');
+            
+            progress.style.display = 'block';
+            
+            // Simulate Google authentication process
+            let progressValue = 0;
+            const interval = setInterval(() => {
+                progressValue += 10;
+                progressFill.style.width = progressValue + '%';
+                
+                if (progressValue === 30) {
+                    progressText.textContent = 'Connecting to Google...';
+                } else if (progressValue === 60) {
+                    progressText.textContent = 'Authenticating...';
+                } else if (progressValue === 90) {
+                    progressText.textContent = 'Redirecting to dashboard...';
+                } else if (progressValue >= 100) {
+                    clearInterval(interval);
+                    
+                    // Get account info for display
+                    const accountName = selectedAccount.querySelector('.account-name').textContent;
+                    const accountEmail = selectedAccount.querySelector('.account-email').textContent;
+                    
+                    // Redirect to dashboard after successful login
+                    setTimeout(() => {
+                        alert(`Successfully logged in as ${accountName} (${accountEmail})`);
+                        window.location.href = '../admin HTML/home.html';
+                    }, 1000);
+                }
+            }, 200);
+        }
+
+        function useAnotherAccount() {
+            // In a real implementation, this would open Google's OAuth flow
+            alert('This would open Google OAuth for adding a new account');
+            
+            // For demo purposes, let's simulate adding a new account
+            setTimeout(() => {
+                const newAccount = document.createElement('div');
+                newAccount.className = 'account-item';
+                newAccount.onclick = function() { selectAccount(this); };
+                
+                newAccount.innerHTML = `
+                    <div class="account-avatar">NA</div>
+                    <div class="account-info">
+                        <div class="account-name">New Account</div>
+                        <div class="account-email">newuser@example.com</div>
+                    </div>
+                    <div class="account-check">✓</div>
+                `;
+                
+                document.querySelector('.account-list').appendChild(newAccount);
+                
+                // Select the new account
+                selectAccount(newAccount);
+            }, 1500);
+        }
+
+        // Add keyboard support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !document.getElementById('continue-btn').disabled) {
+                continueWithGoogle();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Generate Report</title>
+    <link rel="stylesheet" href="../admin CSS/generate-report.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <!-- Circular Logo Container with Shimmer Effect -->
+                <div class="logo-container">
+                    <div class="shimmer-overlay"></div>
+                    <!-- Replace this div with your actual logo image -->
+                    <div class="logo-placeholder">
+                        <img src="../images/logo.png" alt="Your Logo" class="logo-image">
+                    </div>
+                </div>
+                
+                <!-- Admin Info Below Logo -->
+                <div class="admin-info">
+                    <div class="admin-name">Ugyen Namgyel</div>
+                    <div class="admin-role">Administrator</div>
+                </div>
+            </div>
+            
+            <!-- Updated Sidebar Navigation -->
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <a href="home.html" class="nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="generate-report.html" class="nav-item sub-nav-item active">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                        <span>Generate Report</span>
+                    </a>
+                    
+                    <a href="profile.html" class="nav-item sub-nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <span>Profile</span>
+                    </a>
+                    
+                    <a href="switch-acc.html" class="nav-item sub-nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63c-.34-1.02-1.28-1.37-2.21-1.37-.93 0-1.87.35-2.21 1.37L13 16h2.5v6h4.5zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2.5 16v-6H10.5l-2.54-7.63C7.62 7.35 6.68 7 5.75 7s-1.87.35-2.21 1.37L1 16h2.5v6H8z"/>
+                        </svg>
+                        <span>Switch Account</span>
+                    </a>
+                    
+                    <a href="logout.html" class="nav-item sub-nav-item">
+                        <svg class="nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                        </svg>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-left">
+                    <h1 class="page-title">Generate Report</h1>
+                    <p class="page-subtitle">Create and download comprehensive reports for your platform analytics</p>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <svg class="search-icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Search anything...">
+                    </div>
+                    
+                    <button class="notification-btn" onclick="toggleNotifications()">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <div class="notification-badge">3</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notification Popup -->
+            <div class="notification-popup" id="notificationPopup">
+                <div class="notification-header">
+                    <h3>System Notifications</h3>
+                    <button class="close-notifications" onclick="toggleNotifications()">×</button>
+                </div>
+                <div class="notification-list">
+                    <div class="notification-item unread">
+                        <div class="notification-icon">📊</div>
+                        <div class="notification-content">
+                            <div class="notification-title">Monthly Report Ready</div>
+                            <div class="notification-message">January sales report is now available for download</div>
+                            <div class="notification-time">1 hour ago</div>
+                        </div>
+                    </div>
+                    <div class="notification-item unread">
+                        <div class="notification-icon">⚠️</div>
+                        <div class="notification-content">
+                            <div class="notification-title">Low Inventory Alert</div>
+                            <div class="notification-message">5 items are running low in stock</div>
+                            <div class="notification-time">3 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">👥</div>
+                        <div class="notification-content">
+                            <div class="notification-title">New User Registration</div>
+                            <div class="notification-message">2 new users joined the platform</div>
+                            <div class="notification-time">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-footer">
+                    <button class="mark-all-read" onclick="markAllAsRead()">Mark all as read</button>
+                </div>
+            </div>
+
+            <!-- Report Generation Section -->
+            <div class="report-container">
+                <!-- Report Type Selection -->
+                <div class="report-section">
+                    <h3 class="section-title">Report Type</h3>
+                    <div class="report-options">
+                        <div class="option-card" data-type="sales" onclick="selectReportType(this)">
+                            <div class="option-icon">
+                                <i>📊</i>
+                            </div>
+                            <div class="option-title">Sales Report</div>
+                            <div class="option-desc">Detailed analysis of sales performance, revenue trends, and transaction history</div>
+                        </div>
+                        
+                        <div class="option-card" data-type="inventory" onclick="selectReportType(this)">
+                            <div class="option-icon">
+                                <i>📦</i>
+                            </div>
+                            <div class="option-title">Inventory Report</div>
+                            <div class="option-desc">Overview of stock levels, product management, and inventory turnover</div>
+                        </div>
+                        
+                        <div class="option-card" data-type="user" onclick="selectReportType(this)">
+                            <div class="option-icon">
+                                <i>👥</i>
+                            </div>
+                            <div class="option-title">User Activity</div>
+                            <div class="option-desc">User engagement metrics, platform usage statistics, and behavior patterns</div>
+                        </div>
+                        
+                        <div class="option-card" data-type="feedback" onclick="selectReportType(this)">
+                            <div class="option-icon">
+                                <i>💬</i>
+                            </div>
+                            <div class="option-title">Feedback Report</div>
+                            <div class="option-desc">Customer feedback analysis, satisfaction metrics, and review trends</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date Range Selection -->
+                <div class="report-section">
+                    <h3 class="section-title">Date Range</h3>
+                    <div class="date-range">
+                        <div class="form-group">
+                            <label class="form-label">Start Date</label>
+                            <input type="date" id="start-date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">End Date</label>
+                            <input type="date" id="end-date" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Format Selection -->
+                <div class="report-section">
+                    <h3 class="section-title">Report Format</h3>
+                    <div class="form-group">
+                        <select id="report-format" class="form-control">
+                            <option value="pdf">PDF Document</option>
+                            <option value="excel">Excel Spreadsheet</option>
+                            <option value="csv">CSV File</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="generateReport()">
+                        <i>📈</i> Generate Report
+                    </button>
+                    <button class="btn btn-outline" onclick="resetForm()">
+                        <i>🔄</i> Reset Form
+                    </button>
+                </div>
+
+                <!-- Export Buttons -->
+                <div class="export-buttons" id="export-buttons" style="display: none;">
+                    <button class="export-btn export-pdf" onclick="exportReport('pdf')">
+                        <i>📄</i> Export as PDF
+                    </button>
+                    <button class="export-btn export-excel" onclick="exportReport('excel')">
+                        <i>📊</i> Export as Excel
+                    </button>
+                    <button class="export-btn export-csv" onclick="exportReport('csv')">
+                        <i>📋</i> Export as CSV
+                    </button>
+                </div>
+
+                <!-- Report Preview -->
+                <div class="report-preview" id="report-preview">
+                    <div class="preview-header">
+                        <div class="preview-title">Report Preview</div>
+                    </div>
+                    <div class="preview-content">
+                        <div class="preview-placeholder">
+                            <i>📊</i>
+                            <p>Your report will be generated here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../admin JS/generate-report.js"></script>
+</body>
+</html>

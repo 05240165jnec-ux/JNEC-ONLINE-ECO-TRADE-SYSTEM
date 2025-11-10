@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JNEC ECO-TRADE</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <!-- Marketplace Wrapper -->
+    <div class="marketplace-wrapper">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <!-- Fixed Logo Section -->
+            <div class="sidebar-logo-container">
+                <img src="../image/logo.png" alt="JNEC Logo" class="sidebar-logo">
+            </div>
+            
+            <!-- Scrollable Content -->
+            <div class="sidebar-header">
+                    <h1 id="marketplace"  class="h4 marketplace-title">Marketplace</h1>
+            </div>
+            <div class="sidebar-scrollable">
+                
+                <div class="sidebar-menu">
+                    <a href="#" class="sidebar-item active" id="dashboard-link" data-page="dashboard">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Html/index.html" class="sidebar-item">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Browse All</span>
+                    </a>               
+                    
+                    <!-- My Booking with Dropdown Arrow -->
+                    <a href="../Html/book_item.html" class="sidebar-item" id="bookingDropdownBtn">
+                        <i class="bi bi-inbox-fill"></i>
+                        <span>My Booking</span>
+                        <i class="bi bi-chevron-down dropdown-arrow"></i>
+                    </a>
+                    
+                    <!-- My Listings with Dropdown Arrow -->
+                    <a href="../Html/selling.html" class="sidebar-item" id="listingsDropdownBtn">
+                        <i class="bi bi-person-fill"></i>
+                        <span>My Listings</span>
+                        <i class="bi bi-chevron-down dropdown-arrow"></i>
+                    </a>
+                    
+                    <!-- NEW: Add New Item Button -->
+                    <a href="../Html/post_item.html" class="sidebar-item add-new-item-btn">
+                        <i class="bi bi-plus-circle-fill"></i>
+                        <span>Add New Item</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-menu-group sidebar-user-menu">
+                    <div class="menu-title">
+                        User Menu
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <a href="../Html/setting.html" class="category-link">
+                        <i class="bi bi-gear-fill"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="../Html/feedback.html" class="category-link">
+                        <i class="bi bi-person-circle"></i>
+                        <span>Feedback</span>
+                    </a>
+                    <a href="../Html/welcome.html" class="category-link logout-link">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-location">
+                    <div class="location-text">
+                        <strong>Location</strong>
+                        <span class="location-link">Edit</span>
+                    </div>
+                    <div class="location-link">JNEC, Bhutan</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Container -->
+            <div class="dashboard-header-container">
+                <div class="header-left">
+                    <h1 class="dashboard-main-title">JNEC Online Eco-Trade</h1>
+                    <p class="dashboard-subtitle">Welcome back! Here's what's happening with your platform.</p>
+                </div>
+                <div class="header-right">
+                    <span class="welcome-message">Welcome, Yoesel!</span>
+                    
+                    <!-- Notification Bell with Dropdown -->
+                    <div class="notification-wrapper">
+                        <a class="notification-icon-link" href="#" id="notificationBtn">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="badge rounded-pill bg-danger notification-badge">3</span>
+                        </a>
+                        
+                        <!-- Notification Dropdown -->
+                        <div class="dropdown notification-dropdown" id="notificationDropdown">
+                            <div class="dropdown-header">
+                                <h3>Notifications</h3>
+                                <button class="mark-read-btn">Mark all as read</button>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon order">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">New Booking</p>
+                                        <p class="notification-text">Sonam yeshi booked your item</p>
+                                        <span class="notification-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-item unread">
+                                    <div class="notification-icon message">
+                                        <i class="fas fa-message"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">New Message</p>
+                                        <p class="notification-text">You have a message from customer</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-item unread">
+                                    <div class="notification-icon payment">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Saved item</p>
+                                        <p class="notification-text">yeshi added your item to favorites</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="../Html/notification.html" class="view-all-btn">View All Notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile with Dropdown -->
+                    <div class="profile-wrapper">
+                        <a class="profile-link" href="#" id="profileBtn">
+                            <i class="bi bi-person-circle"></i>
+                            <span>Profile</span>
+                        </a>
+                        
+                        <!-- Profile Dropdown -->
+                        <div class="dropdown profile-dropdown" id="profileDropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <h4>Yoesel</h4>
+                                    <p>yoesel@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-menu">
+                                <a href="../Html/setting.html" class="profile-menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="../Html/book_item.html" class="profile-menu-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Saved</span>
+                                </a>
+                                <a href="../Html/setting.html" class="profile-menu-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Help & Support</span>
+                                </a>
+                                <div class="divider"></div>
+                                <a href="../Html/welcome.html" class="profile-menu-item logout">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                
+                <!-- Category Summary -->
+                <div class="category-summary">
+                    <h2 class="section-header">
+                        <i class="bi bi-grid-fill"></i>
+                        Category Summary
+                    </h2>
+                    <div class="category-grid-horizontal" id="categoryGrid">
+                        <div class="category-item" data-category="books">
+                            <i class="bi bi-book-fill category-icon"></i>
+                            <div class="category-name">Books & Stationery</div>
+                            <div class="category-count">45</div>
+                        </div>
+                        <div class="category-item" data-category="electronics">
+                            <i class="bi bi-laptop-fill category-icon"></i>
+                            <div class="category-name">Electronics & Gadgets</div>
+                            <div class="category-count">67</div>
+                        </div>
+                        <div class="category-item" data-category="clothes">
+                            <i class="bi bi-book-fill category-icon"></i>
+                            <div class="category-name">Clothes & Accessories</div>
+                            <div class="category-count">52</div>
+                        </div>
+                        <div class="category-item" data-category="hostel">
+                            <i class="bi bi-house-door-fill category-icon"></i>
+                            <div class="category-name">Hostel & Room Items</div>
+                            <div class="category-count">38</div>
+                        </div>
+                        <div class="category-item" data-category="sports">
+                            <i class="bi bi-dribbble category-icon"></i>
+                            <div class="category-name">Sports & Fitness</div>
+                            <div class="category-count">24</div>
+                        </div>
+                        <div class="category-item" data-category="others">
+                            <i class="bi bi-three-dots category-icon"></i>
+                            <div class="category-name">Others</div>
+                            <div class="category-count">21</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Listings -->
+                <div class="listings-section">
+                    <h2 class="section-header">
+                        <i class="bi bi-clock-history"></i>
+                        Recent Listings
+                    </h2>
+                    <div id="recentListings">
+                        <!-- Recent listings will be dynamically added here -->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

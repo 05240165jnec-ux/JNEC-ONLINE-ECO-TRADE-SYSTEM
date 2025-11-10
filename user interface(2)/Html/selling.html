@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard | JNEC Online Eco-Trade</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/selling.css">
+</head>
+<body>
+    <!-- Marketplace Wrapper -->
+    <div class="marketplace-wrapper">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <!-- Fixed Logo Section -->
+            <div class="sidebar-logo-container">
+                <img src="../image/logo.png" alt="JNEC Logo" class="sidebar-logo">
+            </div>
+            
+            <!-- Scrollable Content -->
+            <div class="sidebar-header">
+                <h1 id="marketplace" class="h4 marketplace-title">Marketplace</h1>
+            </div>
+            <div class="sidebar-scrollable">
+                
+                <div class="sidebar-menu">
+                    <a href="../Html/Dashboard.html" class="sidebar-item" id="dashboard-link" data-page="dashboard">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../Html/index.html" class="sidebar-item">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Browse All</span>
+                    </a>               
+                    
+                    <!-- My Booking with Dropdown Arrow -->
+                    <a href="../Html/book_item.html" class="sidebar-item" id="bookingDropdownBtn">
+                        <i class="bi bi-inbox-fill"></i>
+                        <span>My Booking</span>
+                        <i class="bi bi-chevron-down dropdown-arrow"></i>
+                    </a>
+                    
+                    <!-- My Listings with Dropdown (Collapsible) - UPDATED SUBMENU STYLE -->
+                    <div class="sidebar-dropdown">
+                        <a href="#" class="sidebar-item" id="listingsDropdownBtn">
+                            <i class="bi bi-person-fill"></i>
+                            <span>My Listings</span>
+                            <i class="bi bi-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <a href="#" class="submenu-item active" data-target="my-listings">
+                                <i class="fa-solid fa-box"></i>
+                                <span>My Listings</span>
+                            </a>
+                            <a href="#" class="submenu-item" data-target="booking-requests">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                                <span>Booking Requests</span>
+                                <span id="booking-count" class="badge rounded-pill bg-danger notification-badge">5</span>
+                            </a>
+                            <a href="#" class="submenu-item" data-target="drafts">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                <span>Saved Drafts</span>
+                            </a>
+                            <a href="#" class="submenu-item" data-target="notifications">
+                                <i class="fa-solid fa-bell"></i>
+                                <span>Notifications</span>
+                                <span id="notification-count" class="badge rounded-pill bg-danger notification-badge">3</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- NEW: Add New Item Button -->
+                    <a href="../Html/post_item.html" class="sidebar-item add-new-item-btn">
+                        <i class="bi bi-plus-circle-fill"></i>
+                        <span>Add New Item</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-menu-group sidebar-user-menu">
+                    <div class="menu-title">
+                        User Menu
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <a href="../Html/setting.html" class="category-link">
+                        <i class="bi bi-gear-fill"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="../Html/feedback.html" class="category-link">
+                        <i class="bi bi-person-circle"></i>
+                        <span>Feedback</span>
+                    </a>
+                    <a href="../Html/welcome.html" class="category-link logout-link">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-location">
+                    <div class="location-text">
+                        <strong>Location</strong>
+                        <span class="location-link">Edit</span>
+                    </div>
+                    <div class="location-link">JNEC, Bhutan</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header Container -->
+            <div class="dashboard-header-container">
+                <div class="header-left">
+                    <h1 class="dashboard-main-title">JNEC Online Eco-Trade</h1>
+                    <p class="dashboard-subtitle">Manage your listings and track performance</p>
+                </div>
+                <div class="header-right">
+                    <span class="welcome-message">Welcome, Yoesel!</span>
+                    
+                    <!-- Notification Bell with Dropdown -->
+                    <div class="notification-wrapper">
+                        <a class="notification-icon-link" href="#" id="notificationBtn">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="badge rounded-pill bg-danger notification-badge">3</span>
+                        </a>
+                        
+                        <!-- Notification Dropdown -->
+                        <div class="dropdown notification-dropdown" id="notificationDropdown">
+                            <div class="dropdown-header">
+                                <h3>Notifications</h3>
+                                <button class="mark-read-btn">Mark all as read</button>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon order">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">New Booking</p>
+                                        <p class="notification-text">Sonam yeshi booked your item</p>
+                                        <span class="notification-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-item unread">
+                                    <div class="notification-icon message">
+                                        <i class="fas fa-message"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">New Message</p>
+                                        <p class="notification-text">You have a message from customer</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-item unread">
+                                    <div class="notification-icon payment">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Saved item</p>
+                                        <p class="notification-text">yeshi added your item to favorites</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-footer">
+                                <a href="../Html/notification.html" class="view-all-btn">View All Notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile with Dropdown -->
+                    <div class="profile-wrapper">
+                        <a class="profile-link" href="#" id="profileBtn">
+                            <i class="bi bi-person-circle"></i>
+                            <span>Profile</span>
+                        </a>
+                        
+                        <!-- Profile Dropdown -->
+                        <div class="dropdown profile-dropdown" id="profileDropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <h4>Yoesel</h4>
+                                    <p>yoesel@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-menu">
+                                <a href="../Html/setting.html" class="profile-menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="../Html/book_item.html" class="profile-menu-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Saved</span>
+                                </a>
+                                <a href="../Html/setting.html" class="profile-menu-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <a href="#" class="profile-menu-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Help & Support</span>
+                                </a>
+                                <div class="divider"></div>
+                                <a href="../Html/welcome.html" class="profile-menu-item logout">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- My Listings Section -->
+                <section id="my-listings" class="content-section active">
+                    <h2>My Listings</h2>
+                    <p class="description">Manage all your active and sold listings</p>
+                    <div class="filter-bar">
+                        <input type="text" id="listing-search" placeholder="Search by title...">
+                        <select id="listing-status-filter">
+                            <option value="all">Status: All</option>
+                            <option value="Active">Active</option>
+                            <option value="Sold">Sold/Donated</option>
+                        </select>
+                    </div>
+                    
+                    <div id="listings-container"></div>
+                </section>
+
+                <!-- Booking Requests Section -->
+                <section id="booking-requests" class="content-section">
+                    <h2>Booking Requests</h2>
+                    <p class="description">Review and manage buyer booking requests</p>
+                    <div class="filter-bar">
+                        <input type="text" id="booking-search" placeholder="Search by item or buyer name...">
+                        <select id="booking-status-filter">
+                            <option value="all">Status: All</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div id="booking-requests-container"></div>
+                </section>
+
+                <!-- Drafts Section -->
+                <section id="drafts" class="content-section">
+                    <h2>Saved Drafts</h2>
+                    <p class="description">Items you started posting but didn't finish.</p>
+                    <div id="drafts-container">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <p>No drafts currently saved.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notifications Section -->
+                <section id="notifications" class="content-section">
+                    <h2>Notifications for Sellers</h2>
+                    <div id="notification-feed">
+                        <ul id="notification-list"></ul>
+                    </div>
+                    <button id="clear-notifications" class="secondary-btn">Clear All</button>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Action Modal -->
+    <div id="action-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title">Confirm Action</h3>
+            <p id="modal-message">Are you sure you want to proceed?</p>
+            <div class="modal-actions">
+                <button id="modal-confirm-btn" class="primary-btn">Confirm</button>
+                <button class="secondary-btn modal-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="success-toast" class="toast-notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Action completed successfully!</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/selling.js"></script>
+</body>
+</html>
